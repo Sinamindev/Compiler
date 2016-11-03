@@ -1,5 +1,5 @@
 /**************************************************************************************
- * Compiler
+ * Single-pass Compiler
  * main.cpp
  *
  * Programmer 1		: Cameron Walters
