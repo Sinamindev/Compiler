@@ -1,0 +1,144 @@
+-----------------------------------------------------------
+Token: Keyword       Lexeme: function      Line: 5
+<Rat15S> ::= <Opt Function Definitions>   @@  <Opt Declaration List> @@ <Statement List>  
+<Opt Function Definitions> ::= <Function Definitions> | <Empty>
+<Function Definitions>  ::= <Function> | <Function> <Function Definitions>
+<Function> ::= function  <Identifier>  [ <Opt Parameter List> ]   <Opt Declaration List>  <Body>
+-----------------------------------------------------------
+Token: Identifier    Lexeme: youcouldntevenunderstandmeLine: 5
+-----------------------------------------------------------
+Token: Separator     Lexeme: [             Line: 5
+-----------------------------------------------------------
+Token: Identifier    Lexeme: law2ka        Line: 5
+<Opt Parameter List> ::=  <Parameter List>   |  <Empty>
+<Parameter List>  ::=  <Parameter>  | <Parameter> , <Parameter List>
+<Parameter> ::=  <Identifier> : <Qualifier>
+-----------------------------------------------------------
+Token: Operator      Lexeme: :             Line: 5
+-----------------------------------------------------------
+Token: Keyword       Lexeme: real          Line: 5
+<Qualifier> ::= int   |  boolean   |  real
+-----------------------------------------------------------
+Token: Separator     Lexeme: ]             Line: 5
+-----------------------------------------------------------
+Token: Separator     Lexeme: {             Line: 6
+<Opt Declaration List> ::= <Declaration List>   | <Empty>
+<Empty> ::= epsilon
+<Body>  ::=  {  < Statement List> }
+-----------------------------------------------------------
+Token: Keyword       Lexeme: while         Line: 6
+<Statement List> ::=  <Statement> | <Statement> <Statement List>
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<While> ::= while ( <Condition>  )  <Statement>
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 6
+-----------------------------------------------------------
+Token: Identifier    Lexeme: jackedman     Line: 6
+<Condition> ::= <Expression>  <relationalOperator>   <Expression>
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: !=            Line: 6
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+<relationalOperator> ::=   = |  !=  |   >   | < | => | <=
+-----------------------------------------------------------
+Token: Keyword       Lexeme: true          Line: 6
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 6
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Separator     Lexeme: {             Line: 8
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Compound> ::= {  <Statement List>  }
+-----------------------------------------------------------
+Token: Identifier    Lexeme: wecoulddoit   Line: 9
+<Statement List> ::=  <Statement> | <Statement> <Statement List>
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: =             Line: 9
+
+ERROR: Expected: :=
+Found the following: Token "Operator" and Lexeme "=" on line 9.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Identifier    Lexeme: all           Line: 9
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: +             Line: 9
+
+ERROR: Expected: :=
+Found the following: Token "Operator" and Lexeme "+" on line 9.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Identifier    Lexeme: night         Line: 9
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: +             Line: 9
+
+ERROR: Expected: :=
+Found the following: Token "Operator" and Lexeme "+" on line 9.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Identifier    Lexeme: long          Line: 9
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 9
+
+ERROR: Expected: :=
+Found the following: Token "Operator" and Lexeme ";" on line 9.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Keyword       Lexeme: int           Line: 10
+
+ERROR: Expected: }
+Found the following: Token "Keyword" and Lexeme "int" on line 10.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Identifier    Lexeme: wewill        Line: 10
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: :=            Line: 10
+-----------------------------------------------------------
+Token: Integer       Lexeme: 0             Line: 10
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 10
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Keyword       Lexeme: real          Line: 11
+
+ERROR: Expected: }
+Found the following: Token "Keyword" and Lexeme "real" on line 11.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Identifier    Lexeme: coulddoit     Line: 11
+
+ERROR: Expected: @@
+Found the following: Token "Identifier" and Lexeme "coulddoit" on line 11.
+Attempting to continue syntax analysis.
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 11
+Reached EOF with errors found.

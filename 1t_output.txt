@@ -1,0 +1,242 @@
+-----------------------------------------------------------
+Token: Keyword       Lexeme: function      Line: 5
+<Rat15S> ::= <Opt Function Definitions>   @@  <Opt Declaration List> @@ <Statement List>  
+<Opt Function Definitions> ::= <Function Definitions> | <Empty>
+<Function Definitions>  ::= <Function> | <Function> <Function Definitions>
+<Function> ::= function  <Identifier>  [ <Opt Parameter List> ]   <Opt Declaration List>  <Body>
+-----------------------------------------------------------
+Token: Identifier    Lexeme: convert       Line: 5
+-----------------------------------------------------------
+Token: Separator     Lexeme: [             Line: 5
+-----------------------------------------------------------
+Token: Identifier    Lexeme: fahr          Line: 5
+<Opt Parameter List> ::=  <Parameter List>   |  <Empty>
+<Parameter List>  ::=  <Parameter>  | <Parameter> , <Parameter List>
+<Parameter> ::=  <Identifier> : <Qualifier>
+-----------------------------------------------------------
+Token: Operator      Lexeme: :             Line: 5
+-----------------------------------------------------------
+Token: Keyword       Lexeme: int           Line: 5
+<Qualifier> ::= int   |  boolean   |  real
+-----------------------------------------------------------
+Token: Separator     Lexeme: ]             Line: 5
+-----------------------------------------------------------
+Token: Separator     Lexeme: {             Line: 6
+<Opt Declaration List> ::= <Declaration List>   | <Empty>
+<Empty> ::= epsilon
+<Body>  ::=  {  < Statement List> }
+-----------------------------------------------------------
+Token: Keyword       Lexeme: return        Line: 7
+<Statement List> ::=  <Statement> | <Statement> <Statement List>
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Return> ::=  return; | return <Expression> ;
+-----------------------------------------------------------
+Token: Integer       Lexeme: 5             Line: 7
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: *             Line: 7
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 7
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Identifier    Lexeme: fahr          Line: 7
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: -             Line: 7
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+-----------------------------------------------------------
+Token: Integer       Lexeme: 32            Line: 7
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 7
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Operator      Lexeme: /             Line: 7
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+-----------------------------------------------------------
+Token: Integer       Lexeme: 9             Line: 7
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 7
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Separator     Lexeme: }             Line: 8
+-----------------------------------------------------------
+Token: Separator     Lexeme: @@            Line: 10
+-----------------------------------------------------------
+Token: Keyword       Lexeme: int           Line: 11
+<Opt Declaration List> ::= <Declaration List>   | <Empty>
+<Declaration List>  := <Declaration> ;  | <Declaration> ; <Declaration List>
+<Declaration> ::=  <Qualifier> <IDs>
+<Qualifier> ::= int   |  boolean   |  real
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 11
+<IDs> ::=  <Identifier>    | <Identifier>, <IDs>
+-----------------------------------------------------------
+Token: Separator     Lexeme: ,             Line: 11
+-----------------------------------------------------------
+Token: Identifier    Lexeme: high          Line: 11
+-----------------------------------------------------------
+Token: Separator     Lexeme: ,             Line: 11
+-----------------------------------------------------------
+Token: Identifier    Lexeme: step          Line: 11
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 11
+-----------------------------------------------------------
+Token: Separator     Lexeme: @@            Line: 13
+-----------------------------------------------------------
+Token: Keyword       Lexeme: read          Line: 14
+<Statement List> ::=  <Statement> | <Statement> <Statement List>
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Read> ::= read ( <IDs> );
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 14
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 14
+<IDs> ::=  <Identifier>    | <Identifier>, <IDs>
+-----------------------------------------------------------
+Token: Separator     Lexeme: ,             Line: 14
+-----------------------------------------------------------
+Token: Identifier    Lexeme: high          Line: 14
+-----------------------------------------------------------
+Token: Separator     Lexeme: ,             Line: 14
+-----------------------------------------------------------
+Token: Identifier    Lexeme: step          Line: 14
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 14
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 14
+-----------------------------------------------------------
+Token: Keyword       Lexeme: while         Line: 15
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<While> ::= while ( <Condition>  )  <Statement>
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 15
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 15
+<Condition> ::= <Expression>  <relationalOperator>   <Expression>
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: <             Line: 15
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+<relationalOperator> ::=   = |  !=  |   >   | < | => | <=
+-----------------------------------------------------------
+Token: Identifier    Lexeme: high          Line: 15
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 15
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Separator     Lexeme: {             Line: 16
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Compound> ::= {  <Statement List>  }
+-----------------------------------------------------------
+Token: Keyword       Lexeme: write         Line: 16
+<Statement List> ::=  <Statement> | <Statement> <Statement List>
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Write> ::=   write ( <Expression> );
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 16
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 16
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 16
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 16
+-----------------------------------------------------------
+Token: Keyword       Lexeme: write         Line: 17
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Write> ::=   write ( <Expression> );
+-----------------------------------------------------------
+Token: Separator     Lexeme: (             Line: 17
+-----------------------------------------------------------
+Token: Identifier    Lexeme: convert       Line: 17
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Separator     Lexeme: [             Line: 17
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 17
+<IDs> ::=  <Identifier>    | <Identifier>, <IDs>
+-----------------------------------------------------------
+Token: Separator     Lexeme: ]             Line: 17
+-----------------------------------------------------------
+Token: Separator     Lexeme: )             Line: 17
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 17
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 18
+<Statement> ::=  <Compound> | <Assign> | <If> | <Return> | <Write> | <Read> | <While>
+<Assign> ::=   <Identifier> := <Expression> ;
+-----------------------------------------------------------
+Token: Operator      Lexeme: :=            Line: 18
+-----------------------------------------------------------
+Token: Identifier    Lexeme: low           Line: 18
+<expression> ::= <term> <expressionPrime>
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: +             Line: 18
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+-----------------------------------------------------------
+Token: Identifier    Lexeme: step          Line: 18
+<term> ::= <Factor> <termPrime>
+<Factor> ::= - <Primary> | <Primary>
+<Primary> ::= <Identifier> | <Integer> | <Identifier> [<IDs>]  | ( <Expression> )  | <Real> | true | false
+-----------------------------------------------------------
+Token: Operator      Lexeme: ;             Line: 18
+<termPrime> ::= * <Factor> <termPrime> | / <Factor> <termPrime> | <Empty>
+<Empty> ::= epsilon
+<expressionPrime>  ::= + <Term> <expressionPrime>  | - <Term> <expressionPrime>  | <Empty>
+<Empty> ::= epsilon
+-----------------------------------------------------------
+Token: Separator     Lexeme: }             Line: 19
+Reached EOF with no errors found.

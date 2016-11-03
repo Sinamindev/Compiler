@@ -1,0 +1,10 @@
+/* 2t.txt Made by Us */
+function addTheStuff []
+{jack := jacked + threeD;}
+	@@
+			real 	joe, mondata; /* funny 
+stuff */
+@@   return(key);
+	while(not = true) 
+{ value := 0 - 2;
+}

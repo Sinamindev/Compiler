@@ -1,0 +1,42 @@
+
+  Token            Lexeme
+
+Keyword           function
+Identifier        addTheStuff
+Separator         [
+Separator         ]
+Separator         {
+Identifier        jack
+Operator          :=
+Identifier        jacked
+Operator          +
+Identifier        threeD
+Operator          ;
+Separator         }
+Separator         @@
+Keyword           real
+Identifier        joe
+Separator         ,
+Identifier        mondata
+Operator          ;
+Separator         @@
+Keyword           return
+Separator         (
+Identifier        key
+Separator         )
+Operator          ;
+Keyword           while
+Separator         (
+Identifier        not
+Operator          =
+Keyword           true
+Separator         )
+Separator         {
+Identifier        value
+Operator          :=
+Integer           0
+Operator          -
+Integer           2
+Operator          ;
+Separator         }
+
